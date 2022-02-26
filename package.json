@@ -1,0 +1,24 @@
+{
+  "name": "monorepo-npm-modules-example",
+  "version": "1.0.0",
+  "description": "Example monorepo with multi npm modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slaveofcode/monorepo-npm-modules-example.git"
+  },
+  "keywords": [
+    "monorepo",
+    "npm",
+    "module"
+  ],
+  "author": "Aditya Kresna Permana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slaveofcode/monorepo-npm-modules-example/issues"
+  },
+  "homepage": "https://github.com/slaveofcode/monorepo-npm-modules-example#readme"
+}

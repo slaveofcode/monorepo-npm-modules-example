@@ -1,0 +1,125 @@
+name: NPM Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-npm:
+    name: Publish to NPM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com
+          scope: "@slaveofcode"
+
+      # Check & publish section for project modules
+
+      ## ===================== Begin Auth ===================== ## 
+      - name: Check Version Changes for Auth
+        id: auth
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: ./auth/package.json
+          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      - name: Publish New Version
+        if: steps.auth.outputs.changed == 'true'
+        run: |
+          cd ./auth
+          npm i
+          npm run lint
+          npm run test
+          npm run build
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      ## ===================== End Auth ===================== ##
+
+      ## ===================== Begin Common Helpers ===================== ##
+      - name: Check Version Changes for Common Helpers
+        id: common-helpers
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: ./common-helpers/package.json
+          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      - name: Publish New Version
+        if: steps.common-helpers.outputs.changed == 'true'
+        run: |
+          cd ./common-helpers
+          npm i
+          npm run lint
+          npm run test
+          npm run build
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      ## ===================== End Common Helpers ===================== ##
+
+      ## ===================== Begin Cryptography ===================== ##
+      - name: Check Version Changes for Cryptography
+        id: cryptography
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: ./cryptography/package.json
+          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      - name: Publish New Version
+        if: steps.cryptography.outputs.changed == 'true'
+        run: |
+          cd ./cryptography
+          npm i
+          npm run lint
+          npm run test
+          npm run build
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      ## ===================== End Cryptography ===================== ##
+      
+      ## ===================== Begin Notification ===================== ##
+      - name: Check Version Changes for Notification
+        id: notification
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: ./notification/package.json
+          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      - name: Publish New Version
+        if: steps.notification.outputs.changed == 'true'
+        run: |
+          cd ./notification
+          npm i
+          npm run lint
+          npm run test
+          npm run build
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      ## ===================== End Notification ===================== ##
+
+      ## ===================== Start Service Adapter ===================== ##
+      - name: Check Version Changes for Service Adapter
+        id: service-adapter
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: ./service-adapter/package.json
+          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      - name: Publish New Version
+        if: steps.service-adapter.outputs.changed == 'true'
+        run: |
+          cd ./service-adapter
+          npm i
+          npm run lint
+          npm run test
+          npm run build
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+      ## ===================== End Service Adapter ===================== ##
