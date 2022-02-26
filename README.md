@@ -17,7 +17,7 @@ The github action will automatically release new npm module version when the ver
 - remove label `private: true` on `package.json`
 - add custom `.npmrc` to handle local & cloud registry authententication (see the example at `auth/.npmrc`)
 - Don't forget to set `main` and `files` to only direct the generated `.js` files at `package.json`
-- Add extra config at `package.json`
+- Add extra config at `package.json` (You might adjust the account & repository name)
 
 ```js
 ...
