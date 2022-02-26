@@ -14,8 +14,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/slaveofcode
-          
+          registry-url: https://npm.pkg.github.com
+          scope: "@slaveofcode"
+
       # Check & publish section for project modules
 
       ## ===================== Begin Auth ===================== ## 
@@ -26,7 +27,7 @@ jobs:
           diff-search: true
           file-name: ./auth/package.json
           token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
-      - name: Publish New Version
+      - name: Prepare NPM
         if: steps.auth.outputs.changed == 'true'
         run: |
           cd ./auth
@@ -34,7 +35,9 @@ jobs:
           npm run lint
           npm run test
           npm run build
-          npm publish
+      - name: Publish
+        if: steps.auth.outputs.changed == 'true'
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
       ## ===================== End Auth ===================== ##
