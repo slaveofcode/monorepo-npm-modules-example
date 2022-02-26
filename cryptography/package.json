@@ -1,9 +1,8 @@
 {
   "name": "@slaveofcode/test-cryptography",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "author": "",
-  "private": true,
   "license": "UNLICENSED",
   "main": "./dist/index.js",
   "files": [
