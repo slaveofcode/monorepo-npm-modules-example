@@ -10,6 +10,9 @@ These projects are just an example of implementation where every project has it'
 - Notification (npm module as: @slaveofcode/test-notification)
 - Service Adapter (npm module as: @slaveofcode/test-service-adapter)
 
+## Auto-release per Project
+The github action will automatically release new npm module version when the version of `package.json` is changed (patch-minor-major), triggered by pushing the commit at `main` branch
+
 ## Notes for Project
 - remove label `private: true` on `package.json`
 - add custom `.npmrc` to handle local & cloud registry authententication (see the example at `auth/.npmrc`)
