@@ -27,7 +27,7 @@ jobs:
           diff-search: true
           file-name: ./auth/package.json
           token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
-      - name: Prepare NPM
+      - name: Publish NPM
         if: steps.auth.outputs.changed == 'true'
         run: |
           cd ./auth
@@ -35,9 +35,7 @@ jobs:
           npm run lint
           npm run test
           npm run build
-      - name: Publish
-        if: steps.auth.outputs.changed == 'true'
-        run: npm publish
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
       ## ===================== End Auth ===================== ##
