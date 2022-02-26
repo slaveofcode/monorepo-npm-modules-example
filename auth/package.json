@@ -1,9 +1,8 @@
 {
   "name": "@slaveofcode/test-auth",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "author": "",
-  "private": true,
   "license": "UNLICENSED",
   "main": "./dist/index.js",
   "files": [
