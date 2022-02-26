@@ -1,6 +1,6 @@
 {
   "name": "@slaveofcode/test-auth",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "author": "",
   "license": "UNLICENSED",
@@ -70,6 +70,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "repository": {
+    "url": "https://github.com/slaveofcode/monorepo-npm-modules-example"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
