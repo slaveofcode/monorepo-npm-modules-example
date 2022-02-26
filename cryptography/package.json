@@ -1,7 +1,7 @@
 {
   "name": "@slaveofcode/test-cryptography",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "Example project for Cryptography",
   "author": "",
   "license": "UNLICENSED",
   "main": "./dist/index.js",

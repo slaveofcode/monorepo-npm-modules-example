@@ -27,7 +27,7 @@ jobs:
           diff-search: true
           file-name: ./auth/package.json
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish NPM
+      - name: Publish Auth
         if: steps.auth.outputs.changed == 'true'
         run: |
           cd ./auth
@@ -48,7 +48,7 @@ jobs:
           diff-search: true
           file-name: ./common-helpers/package.json
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish New Version
+      - name: Publish Common Helpers
         if: steps.common-helpers.outputs.changed == 'true'
         run: |
           cd ./common-helpers
@@ -69,7 +69,7 @@ jobs:
           diff-search: true
           file-name: ./cryptography/package.json
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish New Version
+      - name: Publish Cryptography
         if: steps.cryptography.outputs.changed == 'true'
         run: |
           cd ./cryptography
@@ -90,7 +90,7 @@ jobs:
           diff-search: true
           file-name: ./notification/package.json
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish New Version
+      - name: Publish Notification
         if: steps.notification.outputs.changed == 'true'
         run: |
           cd ./notification
@@ -111,7 +111,7 @@ jobs:
           diff-search: true
           file-name: ./service-adapter/package.json
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish New Version
+      - name: Publish Service Adapter
         if: steps.service-adapter.outputs.changed == 'true'
         run: |
           cd ./service-adapter

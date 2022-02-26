@@ -1,7 +1,7 @@
 {
   "name": "@slaveofcode/test-service-adapter",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "Example project for Service Adapter",
   "author": "",
   "license": "UNLICENSED",
   "main": "./dist/index.js",

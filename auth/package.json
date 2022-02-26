@@ -1,7 +1,7 @@
 {
   "name": "@slaveofcode/test-auth",
-  "version": "0.0.15",
-  "description": "",
+  "version": "0.0.16",
+  "description": "Example project for Auth",
   "author": "",
   "license": "UNLICENSED",
   "main": "./dist/index.js",

@@ -1,7 +1,7 @@
 {
   "name": "@slaveofcode/test-common-helpers",
-  "version": "0.0.3",
-  "description": "",
+  "version": "0.0.4",
+  "description": "Example project for Common Helpers",
   "author": "",
   "license": "UNLICENSED",
   "main": "./dist/index.js",
