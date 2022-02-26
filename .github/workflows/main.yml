@@ -26,7 +26,7 @@ jobs:
         with:
           diff-search: true
           file-name: ./auth/package.json
-          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Publish NPM
         if: steps.auth.outputs.changed == 'true'
         run: |
@@ -37,7 +37,7 @@ jobs:
           npm run build
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       ## ===================== End Auth ===================== ##
 
       ## ===================== Begin Common Helpers ===================== ##
@@ -47,7 +47,7 @@ jobs:
         with:
           diff-search: true
           file-name: ./common-helpers/package.json
-          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Publish New Version
         if: steps.common-helpers.outputs.changed == 'true'
         run: |
@@ -58,7 +58,7 @@ jobs:
           npm run build
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       ## ===================== End Common Helpers ===================== ##
 
       ## ===================== Begin Cryptography ===================== ##
@@ -68,7 +68,7 @@ jobs:
         with:
           diff-search: true
           file-name: ./cryptography/package.json
-          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Publish New Version
         if: steps.cryptography.outputs.changed == 'true'
         run: |
@@ -79,7 +79,7 @@ jobs:
           npm run build
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       ## ===================== End Cryptography ===================== ##
       
       ## ===================== Begin Notification ===================== ##
@@ -89,7 +89,7 @@ jobs:
         with:
           diff-search: true
           file-name: ./notification/package.json
-          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Publish New Version
         if: steps.notification.outputs.changed == 'true'
         run: |
@@ -100,7 +100,7 @@ jobs:
           npm run build
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       ## ===================== End Notification ===================== ##
 
       ## ===================== Start Service Adapter ===================== ##
@@ -110,7 +110,7 @@ jobs:
         with:
           diff-search: true
           file-name: ./service-adapter/package.json
-          token: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Publish New Version
         if: steps.service-adapter.outputs.changed == 'true'
         run: |
@@ -121,5 +121,5 @@ jobs:
           npm run build
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this needed if you perform at private repository
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       ## ===================== End Service Adapter ===================== ##
