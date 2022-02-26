@@ -1,6 +1,6 @@
 {
   "name": "@slaveofcode/test-auth",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "author": "",
   "license": "UNLICENSED",
@@ -70,5 +70,8 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
